@@ -7,7 +7,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 		
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
 
-		data.content = '<div id="vip-container">' + data.content + '</div>';
+		data.content = '<div id="readmore-container">' + data.content + '</div>';
 		
 		var str = `
 			<script src="` + libUrl + `" type="text/javascript"></script>
@@ -17,7 +17,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 				try {
 					var btw = new BTWPlugin();
 					btw.init({
-						"id": "vip-container",
+						"id": "readmore-container",
 						"blogId": "${readmoreConfig.blogId}",
 						"name": "${readmoreConfig.name}",
 						"qrcode": "${readmoreConfig.qrcode}",
