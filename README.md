@@ -30,12 +30,11 @@ $ hexo server
 readmore:
   enable: true                                                      # 是否启用，默认否
   blogId: 18762-1609305354821-257                                   # 已申请的博客 ID
-  qrcode: https://www.techgrow.cn/img/wx_public_qr.png              # 已申请的公众号二维码链接
-  name: 'Clay的技术博客'                                              # 已申请的博客名称
+  qrcode: https://www.techgrow.cn/img/wx_mp_qr.png                  # 已申请的公众号二维码链接
+  name: 'Clay 的技术博客'                                             # 已申请的博客名称
   keyword: vip                                                      # 已申请的公众号回复关键字
   # libUrl: https://qiniu.techgrow.cn/js/readmore.js                # CDN 加速链接（可选）
   # random: 0.5                                                     # 每篇文章随机添加阅读更多效果的概率（可选），范围在 0.1 ~ 1 之间
-  
 ```
 
 ### 取消某篇文章阅读更多的效果
