@@ -5,6 +5,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 	var readmoreConfig = hexo.config.readmore;
 	if (!data.unreadmore && readmoreConfig && (readmoreConfig.enable ? true : false)) {
 		
+		var random = readmoreConfig.random ? readmoreConfig.random : false;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
 
 		data.content = '<div id="readmore-container">' + data.content + '</div>';
@@ -21,7 +22,8 @@ hexo.extend.filter.register('after_post_render', function(data) {
 						"blogId": "${readmoreConfig.blogId}",
 						"name": "${readmoreConfig.name}",
 						"qrcode": "${readmoreConfig.qrcode}",
-						"keyword": "${readmoreConfig.keyword}"
+						"keyword": "${readmoreConfig.keyword}",
+						"random": "${random}"
 					});
 				} catch(e) {
 					console.warn(e.name + " : " + e.message);

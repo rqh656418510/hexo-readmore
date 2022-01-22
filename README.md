@@ -33,6 +33,7 @@ readmore:
   qrcode: https://www.techgrow.cn/img/wx_public_qr.png              # 已申请的公众号二维码链接
   name: 'Clay的技术博客'                                              # 已申请的博客名称
   keyword: vip                                                      # 已申请的公众号回复关键字
+  random: false                                                     # 每篇文章是否随机添加阅读更多的效果（可选）
   # libUrl: https://qiniu.techgrow.cn/js/readmore.js                # CDN 加速链接（可选）
 ```
 
