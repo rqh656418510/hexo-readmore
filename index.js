@@ -5,7 +5,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 	var readmoreConfig = hexo.config.readmore;
 	if (!data.unreadmore && readmoreConfig && (readmoreConfig.enable ? true : false)) {
 		
-		var random = readmoreConfig.random ? readmoreConfig.random : false;
+		var random = readmoreConfig.random ? readmoreConfig.random : 0;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
 
 		data.content = '<div id="readmore-container">' + data.content + '</div>';
