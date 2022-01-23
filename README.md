@@ -34,7 +34,7 @@ readmore:
   name: 'Clay 的技术博客'                                             # 已申请的博客名称
   keyword: vip                                                      # 已申请的公众号回复关键字
   # libUrl: https://qiniu.techgrow.cn/js/readmore.js                # CDN 加速链接（可选）
-  # random: 0.5                                                     # 每篇文章随机添加阅读更多效果的概率（可选），范围在 0.1 ~ 1 之间
+  # random: 0.5                                                     # 每篇文章随机添加阅读更多效果的概率（可选），有效范围在 0.1 ~ 1 之间
 ```
 
 ### 取消某篇文章阅读更多的效果
