@@ -1,9 +1,18 @@
 'use strict';
 
-hexo.extend.filter.register('after_post_render:html', function(data) {
+function isHtmlFile(filePath){
+	var startIndex = filePath.lastIndexOf(".");
+	if (startIndex != -1) {
+	  var type = filePath.substring(startIndex + 1, filePath.length).toLowerCase();
+	  return "html" === type;
+	}
+	return false;
+}
+
+hexo.extend.filter.register('after_post_render', function(data) {
 
 	var readmoreConfig = hexo.config.readmore;
-	if (!data.unreadmore && readmoreConfig && (readmoreConfig.enable ? true : false)) {
+	if (!data.unreadmore && readmoreConfig && (readmoreConfig.enable ? true : false) && isHtmlFile(data.path)) {
 		
 		var random = readmoreConfig.random ? readmoreConfig.random : 1;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
