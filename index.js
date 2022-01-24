@@ -1,6 +1,6 @@
 'use strict';
 
-hexo.extend.filter.register('after_post_render', function(data) {
+hexo.extend.filter.register('after_post_render:html', function(data) {
 
 	var readmoreConfig = hexo.config.readmore;
 	if (!data.unreadmore && readmoreConfig && (readmoreConfig.enable ? true : false)) {
