@@ -1,8 +1,19 @@
 ## hexo-readmore
 
+[![npm-image]][npm-url]
+[![lic-image]](LICENSE)
+
 > 为 Hexo 博客的每一篇文章都自动添加阅读更多的效果，关注公众号后方可解锁全站文章，从而将博客流量导流到微信公众号，达到涨粉丝数的目的。
 
+### 进度
+
+**前端的代码已开发完成，但后端代码仍在开发中，因此该插件暂时不可用，请知悉（2022年1月27日）。**
+
 ### 安装
+
+![size-image]
+[![dm-image]][npm-url]
+[![dt-image]][npm-url]
 
 - 运行 `npm install` 命令安装到本地项目
 
@@ -57,3 +68,17 @@ updated: 2022-01-12 22:25:49
 - [官方博客](https://www.techgrow.cn/posts/52f22f9b.html)
 
 ![](https://raw.githubusercontent.com/rqh656418510/hexo-readmore/master/screenshot/demo.png)
+
+
+## License
+
+Released under the MIT License
+
+[npm-image]: https://img.shields.io/npm/v/hexo-readmore?style=flat-square
+[lic-image]: https://img.shields.io/npm/l/hexo-readmore?style=flat-square
+
+[size-image]: https://img.shields.io/github/languages/code-size/rqh656418510/hexo-readmore?style=flat-square
+[dm-image]: https://img.shields.io/npm/dm/hexo-readmore?style=flat-square
+[dt-image]: https://img.shields.io/npm/dt/hexo-readmore?style=flat-square
+
+[npm-url]: https://www.npmjs.com/package/hexo-readmore
