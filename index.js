@@ -10,9 +10,15 @@ function isHtmlFile(filePath){
 }
 
 hexo.extend.filter.register('after_post_render', function(data) {
-
 	var readmoreConfig = hexo.config.readmore;
-	if (!data.unreadmore && readmoreConfig && (readmoreConfig.enable ? true : false) && isHtmlFile(data.path)) {
+	var postEnabled = data.readmore;
+	
+	// if the value of postEnabled is undefined or null
+	if (postEnabled == undefined) { 
+		postEnabled = true;
+	}
+	
+	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && isHtmlFile(data.path)) {
 		
 		var random = readmoreConfig.random ? readmoreConfig.random : 1;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
