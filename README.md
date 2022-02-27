@@ -25,9 +25,9 @@ $ npm install hexo-readmore --save
 readmore:
   enable: true                                                      # 是否启用，默认否
   blogId: 18762-1609305354821-257                                   # 已申请的博客 ID
-  qrcode: https://www.techgrow.cn/img/wx_mp_qr.png                  # 已申请的公众号二维码链接
-  name: 'Clay 的技术博客'                                             # 已申请的博客名称
-  keyword: vip                                                      # 已申请的公众号回复关键字
+  name: '全栈技术驿站'                                                # 已申请的微信公众号名称
+  keyword: tech                                                     # 已申请的微信公众号回复关键字
+  qrcode: https://www.techgrow.cn/img/wx_mp_qr.png                  # 已申请的微信公众号二维码链接
   # libUrl: https://qiniu.techgrow.cn/js/readmore.js                # CDN 加速链接（可选）
   # random: 0.5                                                     # 每篇文章随机添加阅读更多效果的概率，有效范围在 0.1 ~ 1 之间（可选）
 ```
@@ -48,7 +48,7 @@ $ hexo server
 
 ### 取消某篇文章阅读更多的效果
 
-若希望取消某篇文章的阅读更多效果，可以在文章的头模板中使用 `readmore: false` 配置属性，如下所示：
+若希望强制取消某篇文章的阅读更多效果，可以在文章的头模板中使用 `readmore: false` 配置属性，如下所示：
 
 ```
 ---
@@ -63,11 +63,12 @@ updated: 2022-01-12 22:25:49
 
 ### 效果截图
 
-![](https://qiniu.techgrow.cn/uploads/2022/02/17/hexo-readmore-screenshot)
+![](https://qiniu.techgrow.cn/uploads/2022/02/28/3f53ab36dfa84fb99a6508ae46e5373a)
+![](https://qiniu.techgrow.cn/uploads/2022/02/28/202980a480fd463c814a31d5cc3fb2a1)
 
 ### 在线演示
 
-- [官方博客](https://www.techgrow.cn/posts/52f22f9b.html)
+- [官方博客](https://www.techgrow.cn/posts/c847598e.html)
 
 ## License
 
