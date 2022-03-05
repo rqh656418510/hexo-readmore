@@ -102,6 +102,11 @@ updated: 2022-01-12 22:25:49
 - [博客实现微信公众号导流](https://open.techgrow.cn/#/guide/readmore/blog)
 - [Hexo 使用插件实现微信公众号导流](https://open.techgrow.cn/#/guide/readmore/hexo)
 
+## 开发计划
+
+- 支持博客浏览量的统计分析
+- 提供多种主题，以适配不同风格的博客
+
 ## License
 
 Released under the MIT License
