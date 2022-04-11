@@ -31,6 +31,10 @@
 
 ## 安装插件
 
+![size-image]
+[![dm-image]][npm-url]
+[![dt-image]][npm-url]
+
 - 运行 `npm install` 命令安装插件到本地项目
 
 ``` sh
@@ -46,7 +50,7 @@ readmore:
   enable: true                                                      # 是否启用，默认否
   blogId: '18762-1609305354821-257'                                 # 已申请的博客 ID
   name: '全栈技术驿站'                                                # 已申请的微信公众号名称
-  keyword: 'tech'                                                   # 已申请的微信公众号回复关键字
+  keyword: 'tech'                                                   # 已申请的微信公众号回复关键词
   qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png'                # 已申请的微信公众号二维码链接
   # libUrl: 'https://qiniu.techgrow.cn/js/readmore.js'              # CDN 加速链接（可选）
   # random: 0.8                                                     # 每篇文章随机添加微信公众号导流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加导流工具（可选）
@@ -104,8 +108,9 @@ updated: 2022-01-12 22:25:49
 
 ## 开发计划
 
-- 支持博客浏览量的统计分析
-- 提供多种主题，以适配不同风格的博客
+- [ ] 支持博客浏览量的统计分析
+- [x] 支持查询博客解锁访问的历史记录
+- [ ] 提供多种主题，以适配不同风格的博客
 
 ## License
 
