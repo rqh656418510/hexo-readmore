@@ -1,10 +1,10 @@
 'use strict';
 
-function isHtmlFile(filePath){
+function validateFile(filePath){
 	var startIndex = filePath.lastIndexOf(".");
 	if (startIndex != -1) {
 	  var type = filePath.substring(startIndex + 1, filePath.length).toLowerCase();
-	  return "html" === type;
+	  return "md" === type;
 	}
 	return false;
 }
@@ -18,7 +18,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 		postEnabled = true;
 	}
 	
-	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && isHtmlFile(data.path)) {
+	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && validateFile(data.full_source)) {
 		
 		var random = readmoreConfig.random ? readmoreConfig.random : 1;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
