@@ -2,16 +2,24 @@
 
 [![npm-image]][npm-url]
 [![lic-image]](LICENSE)
+![size-image]
+[![dm-image]][npm-url]
+[![dt-image]][npm-url]
 
 > Hexo 微信公众号导流插件，将免费的公众号导流工具整合到博客中，用户扫码关注公众号后才可以解锁文章，从而将博客流量导流到公众号，达到涨粉丝数的目的。
+
+## 特色
+
+- [x] 适配绝大多数的 Hexo 主题
+- [x] 支持关闭某篇文章的导流功能
+- [x] 支持随机为博客添加导流功能
+- [x] 支持查询用户解锁阅读文章的历史记录
 
 ## 注册博客
 
 浏览器访问 [TechGrow](https://open.techgrow.cn) 的官网，注册并登录账号后，进入博客的后台管理页面。首先点击左侧的菜单 `博客注册`，然后点击 `新增` 按钮，添加自己博客的信息。博客注册成功后，记录下博客 ID，后面的步骤会使用到
 
 ![](https://www.techgrow.cn/uploads/2022/02/28/717e14eb59dd44dea62d6a0b7549abfd.png)
-
-<!-- more -->
 
 ## 设置公众号
 
@@ -30,10 +38,6 @@
 此时，当读者关注你的微信公众号，并输入关键词后（比如我设置的关键词就是 `tech`），那么读者就会自动接收到获取博客解锁验证码的链接
 
 ## 安装插件
-
-![size-image]
-[![dm-image]][npm-url]
-[![dt-image]][npm-url]
 
 - 运行 `npm install` 命令安装插件到本地项目
 
@@ -97,20 +101,29 @@ updated: 2022-01-12 22:25:49
 ---
 ```
 
-## 在线演示
+## 已适配的主题
 
-- [官方博客](https://www.techgrow.cn/posts/52f22f9b.html)
+- [x] [NexT](https://github.com/next-theme/hexo-theme-next)
+- [x] [Yilia](https://github.com/litten/hexo-theme-yilia)
+- [x] [Icarus](https://github.com/ppoffice/hexo-theme-icarus)
+- [x] [Matery](https://github.com/blinkfox/hexo-theme-matery)
+- [x] [Fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 
 ## 官方教程
 
+- [在线演示案例](https://www.techgrow.cn/posts/52f22f9b.html)
 - [博客实现微信公众号导流](https://open.techgrow.cn/#/guide/readmore/blog)
 - [Hexo 使用插件实现微信公众号导流](https://open.techgrow.cn/#/guide/readmore/hexo)
 
 ## 开发计划
 
-- [ ] 支持博客浏览量的统计分析
-- [x] 支持查询博客解锁访问的历史记录
 - [ ] 提供多种主题，以适配不同风格的博客
+- [ ] 在博客的后台管理界面中，支持文章浏览量的图表统计分析
+- [x] 在博客的后台管理界面中，支持查询用户解锁阅读文章的历史记录
+
+## 官方微信群
+
+![](https://www.techgrow.cn/img/wx-group-qr-techgrow.png)
 
 ## License
 
