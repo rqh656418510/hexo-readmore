@@ -1,6 +1,9 @@
 'use strict';
 
-function validateFile(filePath){
+function validateFile(filePath) {
+	if (!filePath || filePath === '') {
+		return true;
+	}
 	var startIndex = filePath.lastIndexOf(".");
 	if (startIndex != -1) {
 	  var type = filePath.substring(startIndex + 1, filePath.length).toLowerCase();
@@ -20,8 +23,14 @@ hexo.extend.filter.register('after_post_render', function(data) {
 	
 	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && validateFile(data.full_source)) {
 		
+		var lockToc = readmoreConfig.lockToc;
 		var random = readmoreConfig.random ? readmoreConfig.random : 1;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
+		
+		// if the value of lockToc is undefined or null
+		if (lockToc == undefined) {
+			lockToc = true;
+		}
 
 		data.content = '<div id="readmore-container">' + data.content + '</div>';
 		
@@ -38,6 +47,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 						"name": "${readmoreConfig.name}",
 						"qrcode": "${readmoreConfig.qrcode}",
 						"keyword": "${readmoreConfig.keyword}",
+						"lockToc": "${lockToc}",
 						"random": "${random}"
 					});
 				} catch(e) {
