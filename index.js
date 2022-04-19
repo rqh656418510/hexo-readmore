@@ -29,7 +29,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 		
 		// if the value of lockToc is undefined or null
 		if (lockToc == undefined) {
-			lockToc = true;
+			lockToc = 'yes';
 		}
 
 		data.content = '<div id="readmore-container">' + data.content + '</div>';
