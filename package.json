@@ -1,6 +1,6 @@
 {
   "name": "hexo-readmore",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "为 Hexo 博客的每一篇文章都自动添加阅读更多的效果，关注公众号后方可解锁全站文章，从而将博客流量导流到微信公众号，达到涨粉丝数的目的。",
   "main": "index.js",
   "repository": {
