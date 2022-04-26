@@ -108,6 +108,7 @@ updated: 2022-01-12 22:25:49
 - [x] [Icarus](https://github.com/ppoffice/hexo-theme-icarus)
 - [x] [Matery](https://github.com/blinkfox/hexo-theme-matery)
 - [x] [Fluid](https://github.com/fluid-dev/hexo-theme-fluid)
+- [x] [Stun](https://github.com/liuyib/hexo-theme-stun)
 
 ## 官方教程
 
@@ -119,7 +120,6 @@ updated: 2022-01-12 22:25:49
 
 - [ ] 提供多种主题，以适配不同风格的博客
 - [ ] 在博客的后台管理界面中，支持文章浏览量的图表统计分析
-- [x] 在博客的后台管理界面中，支持查询用户解锁阅读文章的历史记录
 
 ## 官方微信群
 
