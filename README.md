@@ -39,7 +39,7 @@
 
 ## 安装插件
 
-- 运行 `npm install` 命令安装插件到本地项目
+- 运行 `npm install` 命令安装插件到本地博客
 
 ``` sh
 $ npm install hexo-readmore --save
@@ -64,13 +64,19 @@ readmore:
 
 ## 构建 Hexo
 
-- 运行 `hexo generate` 命令构建本地项目
+- 运行 `hexo clean` 命令清理本地博客
+
+``` sh
+$ hexo clean
+```
+
+- 运行 `hexo generate` 命令构建本地博客
 
 ``` sh
 $ hexo generate
 ```
 
-- 运行 `hexo server` 命令启动本地服务
+- 运行 `hexo server` 命令启动本地博客服务
 
 ``` sh
 $ hexo server
