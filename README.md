@@ -13,7 +13,8 @@
 - [x] 适配绝大多数的 Hexo 主题
 - [x] 支持关闭某篇文章的导流功能
 - [x] 支持随机为博客添加导流功能
-- [x] 支持查询用户解锁阅读文章的历史记录
+- [x] 支持查询用户解锁文章的历史记录
+- [x] 支持自定义 CSS 样式，轻松适配不同风格的主题
 
 ## 注册博客
 
@@ -56,7 +57,8 @@ readmore:
   name: '全栈技术驿站'                                                # 已申请的微信公众号名称
   keyword: 'tech'                                                   # 已申请的微信公众号回复关键词
   qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png'                # 已申请的微信公众号二维码链接
-  # libUrl: 'https://qiniu.techgrow.cn/js/readmore.js'              # CDN 加速链接（可选）
+  # libUrl: 'https://qiniu.techgrow.cn/js/readmore.js'              # 自定义的 JS 资源链接，可用于 CDN 加速（可选）
+  # cssUrl: 'https://qiniu.techgrow.cn/css/next.css'                # 自定义的 CSS 资源链接，可用于适配不同风格的主题（可选）
   # random: 0.8                                                     # 每篇文章随机添加微信公众号导流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加导流工具（可选）
 ```
 
@@ -125,7 +127,6 @@ updated: 2022-01-12 22:25:49
 ## 开发计划
 
 - [ ] 支持博客的 UV、PV 统计
-- [ ] 提供多种主题，以适配不同风格的博客
 - [ ] 在博客的后台管理界面中，支持博客浏览量的图表分析
 
 ## 官方微信群

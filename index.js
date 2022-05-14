@@ -26,6 +26,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 		var lockToc = readmoreConfig.lockToc;
 		var random = readmoreConfig.random ? readmoreConfig.random : 1;
 		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
+		var cssUrl = readmoreConfig.cssUrl ? readmoreConfig.cssUrl : 'https://qiniu.techgrow.cn/css/next.css';
 		
 		// if the value of lockToc is undefined or null
 		if (lockToc == undefined) {
@@ -35,6 +36,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 		data.content = '<div id="readmore-container">' + data.content + '</div>';
 		
 		var str = `
+			<link rel="stylesheet" type="text/css" href="` + cssUrl + `">
 			<script src="` + libUrl + `" type="text/javascript"></script>
 			<script>
 			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
@@ -51,7 +53,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 						"random": "${random}"
 					});
 				} catch(e) {
-					console.warn(e.name + " : " + e.message);
+					console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
 				}
 			}
 			</script>
