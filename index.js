@@ -25,8 +25,8 @@ hexo.extend.filter.register('after_post_render', function(data) {
 		
 		var lockToc = readmoreConfig.lockToc;
 		var random = readmoreConfig.random ? readmoreConfig.random : 1;
-		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/js/readmore.js';
-		var cssUrl = readmoreConfig.cssUrl ? readmoreConfig.cssUrl : 'https://qiniu.techgrow.cn/css/hexo.css';
+		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
+		var cssUrl = readmoreConfig.cssUrl ? readmoreConfig.cssUrl : 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		
 		// if the value of lockToc is undefined or null
 		if (lockToc == undefined) {
