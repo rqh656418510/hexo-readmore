@@ -8,6 +8,10 @@
 
 > Hexo 微信公众号导流插件，将免费的公众号导流工具整合到博客中，用户扫码关注公众号后才可以解锁文章，从而将博客流量导流到公众号，达到涨粉丝数的目的。
 
+## 文档
+
+- [中文文档](https://docs.techgrow.cn/v1/wechat/hexo/)
+
 ## 特色功能
 
 - [x] 已兼容主流的 Hexo 主题
@@ -109,6 +113,15 @@ updated: 2022-01-12 22:25:49
 ---
 ```
 
+## 自定义样式
+
+插件默认使用了定义在 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 的 CSS 样式，你可以使用以下两种方式自定义自己的样式：
+
+- 第一种方式：更改博客主题的 CSS 源码文件，将自定义的 CSS 样式添加到里面
+- 第二种方式：创建独立的 CSS 文件，并将其存放在自己的博客里，同时通过插件的 `cssUrl` 配置参数来指定其访问的 URL 路径
+
+> 提示：为了方便日后维护，强烈建议使用第二种方式来添加自定义样式
+
 ## 已兼容的主题
 
 - [x] [NexT](https://github.com/next-theme/hexo-theme-next)
@@ -118,11 +131,9 @@ updated: 2022-01-12 22:25:49
 - [x] [Fluid](https://github.com/fluid-dev/hexo-theme-fluid)
 - [x] [Stun](https://github.com/liuyib/hexo-theme-stun)
 
-## 官方教程
+## 周边生态
 
-- [在线演示案例](https://www.techgrow.cn/posts/52f22f9b.html)
-- [博客实现微信公众号导流](https://open.techgrow.cn/#/guide/readmore/blog)
-- [Hexo 使用插件实现微信公众号导流](https://open.techgrow.cn/#/guide/readmore/hexo)
+- [VuePress v1 导流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
 
 ## 开发计划
 
