@@ -22,19 +22,15 @@ hexo.extend.filter.register('after_post_render', function(data) {
 	}
 	
 	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && validateFile(data.full_source)) {
-		
-		var lockToc = readmoreConfig.lockToc;
-		var random = readmoreConfig.random ? readmoreConfig.random : 1;
-		var libUrl = readmoreConfig.libUrl ? readmoreConfig.libUrl : 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
-		var cssUrl = readmoreConfig.cssUrl ? readmoreConfig.cssUrl : 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
-		
-		// if the value of lockToc is undefined or null
-		if (lockToc == undefined) {
-			lockToc = 'yes';
-		}
+
+		var type = 'hexo';
+		var random = readmoreConfig.random || 1;
+		var lockToc = readmoreConfig.lockToc || 'yes';
+		var cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
+		var libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 
 		data.content = '<div id="readmore-container">' + data.content + '</div>';
-		
+
 		var str = `
 			<link rel="stylesheet" type="text/css" href="` + cssUrl + `">
 			<script src="` + libUrl + `" type="text/javascript"></script>
@@ -50,6 +46,7 @@ hexo.extend.filter.register('after_post_render', function(data) {
 						"qrcode": "${readmoreConfig.qrcode}",
 						"keyword": "${readmoreConfig.keyword}",
 						"lockToc": "${lockToc}",
+						"type": "${type}",
 						"random": "${random}"
 					});
 				} catch(e) {
