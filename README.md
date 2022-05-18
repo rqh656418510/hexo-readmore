@@ -6,7 +6,7 @@
 [![dm-image]][npm-url]
 [![dt-image]][npm-url]
 
-> Hexo 微信公众号导流插件，将免费的公众号导流工具整合到博客中，用户扫码关注公众号后才可以解锁文章，从而将博客流量导流到公众号，达到涨粉丝数的目的。
+> Hexo 微信公众号引流插件，将免费的公众号引流工具整合到博客中，用户扫码关注公众号后才可以解锁文章，从而将博客流量引流到公众号，达到涨粉丝数的目的。
 
 ## 文档
 
@@ -15,8 +15,8 @@
 ## 特色功能
 
 - [x] 已兼容主流的 Hexo 主题
-- [x] 支持关闭某篇文章的导流功能
-- [x] 支持随机为博客添加导流功能
+- [x] 支持关闭某篇文章的引流功能
+- [x] 支持随机为博客添加引流功能
 - [x] 支持查询用户解锁文章的历史记录
 - [x] 支持自定义 CSS 样式，轻松适配不同风格的博客
 
@@ -63,7 +63,7 @@ readmore:
   qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png'                  # 已申请的微信公众号二维码链接
   # libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'     # 自定义的 JS 资源链接，可用于 CDN 加速（可选）
   # cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'        # 自定义的 CSS 资源链接，可用于适配不同风格的博客（可选）
-  # random: 0.8                                                       # 每篇文章随机添加微信公众号导流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加导流工具（可选）
+  # random: 0.8                                                       # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具（可选）
 ```
 
 或者打开 TechGrow 的[博客后台管理页面](https://open.techgrow.cn/#/readmore/website/register)，点击博客列表中右侧的 `使用` 链接，将窗口里的 YML 配置内容复制到 Hexo 的 `_config.yml` 配置文件即可
@@ -90,7 +90,7 @@ $ hexo server
 
 ## 验证插件效果
 
-打开文章页面，若文章自动隐藏了部分内容，并且出现了 `阅读全文` 按钮，则说明导流插件正常运行，如下图所示：
+打开文章页面，若文章自动隐藏了部分内容，并且出现了 `阅读全文` 按钮，则说明引流插件正常运行，如下图所示：
 
 ![](https://www.techgrow.cn/uploads/2022/02/28/3f53ab36dfa84fb99a6508ae46e5373a.png)
 
@@ -100,7 +100,7 @@ $ hexo server
 
 ## 取消阅读限制
 
-若希望关闭某篇文章的微信公众号导流功能，可以在文章的头模板中使用 `readmore: false` 配置属性，如下所示：
+若希望关闭某篇文章的微信公众号引流功能，可以在文章的头模板中使用 `readmore: false` 配置属性，如下所示：
 
 ```
 ---
@@ -133,7 +133,7 @@ updated: 2022-01-12 22:25:49
 
 ## 周边生态
 
-- [VuePress v1 导流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
+- [VuePress v1.x 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
 
 ## 开发计划
 
