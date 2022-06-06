@@ -6,25 +6,26 @@ function validateFile(filePath) {
 	}
 	var startIndex = filePath.lastIndexOf(".");
 	if (startIndex != -1) {
-	  var type = filePath.substring(startIndex + 1, filePath.length).toLowerCase();
-	  return "md" === type;
+		var type = filePath.substring(startIndex + 1, filePath.length).toLowerCase();
+		return "md" === type;
 	}
 	return false;
 }
 
-hexo.extend.filter.register('after_post_render', function(data) {
+hexo.extend.filter.register('after_post_render', function (data) {
 	var readmoreConfig = hexo.config.readmore;
 	var postEnabled = data.readmore;
-	
+
 	// if the value of postEnabled is undefined or null
-	if (postEnabled == undefined) { 
+	if (postEnabled == undefined) {
 		postEnabled = true;
 	}
-	
+
 	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && validateFile(data.full_source)) {
 
 		var type = 'hexo';
 		var random = readmoreConfig.random || 1;
+		var expires = readmoreConfig.expires || 365;
 		var lockToc = readmoreConfig.lockToc || 'yes';
 		var cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		var libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
@@ -47,7 +48,8 @@ hexo.extend.filter.register('after_post_render', function(data) {
 						"keyword": "${readmoreConfig.keyword}",
 						"lockToc": "${lockToc}",
 						"type": "${type}",
-						"random": "${random}"
+						"random": "${random}",
+						"expires": "${expires}"
 					});
 				} catch(e) {
 					console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
