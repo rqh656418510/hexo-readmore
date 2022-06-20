@@ -158,6 +158,7 @@ updated: 2022-01-12 22:25:49
 ## 周边生态
 
 - [VuePress v1.x 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
+- [VuePress v2.x 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular-next)
 
 ## 开发计划
 

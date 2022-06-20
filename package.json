@@ -21,5 +21,8 @@
     "name": "rqh656418510",
     "email": "656418510@qq.com"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
 }

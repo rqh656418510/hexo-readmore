@@ -1,9 +1,19 @@
 'use strict';
 
+var colors = require('colors');
+
+var readmoreConfig = hexo.config.readmore;
+var pluginEnabled = readmoreConfig && (readmoreConfig.enable ? true : false);
+
+if (pluginEnabled) {
+	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
+}
+
 function validateFile(filePath) {
 	if (!filePath || filePath === '') {
 		return true;
 	}
+
 	var startIndex = filePath.lastIndexOf(".");
 	if (startIndex != -1) {
 		var type = filePath.substring(startIndex + 1, filePath.length).toLowerCase();
@@ -13,17 +23,16 @@ function validateFile(filePath) {
 }
 
 hexo.extend.filter.register('after_post_render', function (data) {
-	var readmoreConfig = hexo.config.readmore;
+
 	var postEnabled = data.readmore;
 
-	// if the value of postEnabled is undefined or null
+	// if postEnabled is undefined or null
 	if (postEnabled == undefined) {
 		postEnabled = true;
 	}
 
-	if (postEnabled && readmoreConfig && (readmoreConfig.enable ? true : false) && validateFile(data.full_source)) {
+	if (pluginEnabled && postEnabled && validateFile(data.full_source)) {
 
-		var type = 'hexo';
 		var random = readmoreConfig.random || 1;
 		var expires = readmoreConfig.expires || 365;
 		var lockToc = readmoreConfig.lockToc || 'yes';
@@ -47,7 +56,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 						"qrcode": "${readmoreConfig.qrcode}",
 						"keyword": "${readmoreConfig.keyword}",
 						"lockToc": "${lockToc}",
-						"type": "${type}",
+						"type": "hexo",
 						"random": "${random}",
 						"expires": "${expires}"
 					});
