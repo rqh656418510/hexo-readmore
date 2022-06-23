@@ -34,6 +34,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 	if (pluginEnabled && postEnabled && validateFile(data.full_source)) {
 
 		var random = readmoreConfig.random || 1;
+		var interval = readmoreConfig.interval || 60;
 		var expires = readmoreConfig.expires || 365;
 		var lockToc = readmoreConfig.lockToc || 'yes';
 		var cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
@@ -58,6 +59,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 						"lockToc": "${lockToc}",
 						"type": "hexo",
 						"random": "${random}",
+						"interval": "${interval}",
 						"expires": "${expires}"
 					});
 				} catch(e) {
