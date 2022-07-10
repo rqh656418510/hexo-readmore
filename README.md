@@ -70,6 +70,8 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
+  # 文章内容的预览高度
+  height: 'auto'
   # 文章解锁后凭证的有效天数
   expires: 365
   # 定时校验凭证有效性的时间间隔（秒）
@@ -82,18 +84,19 @@ readmore:
 
 ## 参数说明
 
-| 参数     | 类型    | 必填 | 默认值                                                | 说明 |
-| -------- | ------- | ---- | ----------------------------------------------------- | ---- |
-| enable   | Boolean | 是   | `false`                                               | -    |
-| blogId   | String  | 是   |                                                       | -    |
-| name     | String  | 是   |                                                       | -    |
-| keyword  | String  | 是   |                                                       | -    |
-| qrcode   | String  | 是   |                                                       | -    |
-| libUrl   | String  | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
-| cssUrl   | String  | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
-| expires  | Number  | 否   | `365`                                                 | -    |
-| interval | Number  | 否   | `60`                                                  | -    |
-| random   | Number  | 否   | `1`                                                   | -    |
+| 参数     | 类型            | 必填 | 默认值                                                | 说明 |
+| -------- | --------------- | ---- | ----------------------------------------------------- | ---- |
+| enable   | Boolean         | 是   | `false`                                               | -    |
+| blogId   | String          | 是   |                                                       | -    |
+| name     | String          | 是   |                                                       | -    |
+| keyword  | String          | 是   |                                                       | -    |
+| qrcode   | String          | 是   |                                                       | -    |
+| libUrl   | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
+| cssUrl   | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
+| height   | String / Number | 否   | `auto`                                                | -    |
+| expires  | Number          | 否   | `365`                                                 | -    |
+| interval | Number          | 否   | `60`                                                  | -    |
+| random   | Number          | 否   | `1`                                                   | -    |
 
 ## 构建 Hexo
 

@@ -2,13 +2,6 @@
 
 var colors = require('colors');
 
-var readmoreConfig = hexo.config.readmore;
-var pluginEnabled = readmoreConfig && (readmoreConfig.enable ? true : false);
-
-if (pluginEnabled) {
-	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
-}
-
 function validateFile(filePath) {
 	if (!filePath || filePath === '') {
 		return true;
@@ -20,6 +13,13 @@ function validateFile(filePath) {
 		return "md" === type;
 	}
 	return false;
+}
+
+var readmoreConfig = hexo.config.readmore;
+var pluginEnabled = readmoreConfig && (readmoreConfig.enable ? true : false);
+
+if (pluginEnabled) {
+	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
 }
 
 hexo.extend.filter.register('after_post_render', function (data) {
@@ -37,6 +37,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		var interval = readmoreConfig.interval || 60;
 		var expires = readmoreConfig.expires || 365;
 		var lockToc = readmoreConfig.lockToc || 'yes';
+		var height = readmoreConfig.height || 'auto';
 		var cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		var libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 
@@ -60,7 +61,8 @@ hexo.extend.filter.register('after_post_render', function (data) {
 						"type": "hexo",
 						"random": "${random}",
 						"interval": "${interval}",
-						"expires": "${expires}"
+						"expires": "${expires}",
+						"height": "${height}"
 					});
 				} catch(e) {
 					console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
