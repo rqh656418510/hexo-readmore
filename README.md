@@ -155,12 +155,15 @@ updated: 2022-01-12 22:25:49
 
 ## 已兼容的主题
 
-- [x] [NexT](https://github.com/next-theme/hexo-theme-next)
-- [x] [Yilia](https://github.com/litten/hexo-theme-yilia)
-- [x] [Icarus](https://github.com/ppoffice/hexo-theme-icarus)
-- [x] [Matery](https://github.com/blinkfox/hexo-theme-matery)
-- [x] [Fluid](https://github.com/fluid-dev/hexo-theme-fluid)
-- [x] [Stun](https://github.com/liuyib/hexo-theme-stun)
+| 主题      | GitHub 仓库                                                                                            |
+| --------- | ------------------------------------------------------------------------------------------------------ |
+| NexT      | [https://github.com/next-theme/hexo-theme-next](https://github.com/next-theme/hexo-theme-next)         |
+| Yilia     | [https://github.com/litten/hexo-theme-yilia](https://github.com/litten/hexo-theme-yilia)               |
+| Icarus    | [https://github.com/ppoffice/hexo-theme-icarus](https://github.com/ppoffice/hexo-theme-icarus)         |
+| Matery    | [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery)         |
+| Fluid     | [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)         |
+| Stun      | [https://github.com/liuyib/hexo-theme-stun](https://github.com/liuyib/hexo-theme-stun)                 |
+| Butterfly | [https://github.com/jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
 
 ## 周边生态
 
