@@ -145,10 +145,6 @@ updated: 2022-01-12 22:25:49
 ---
 ```
 
-## 开放 API
-
-若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的 API 接口（请自行建设后端应用服务），详细教程请阅读[官方文档](https://docs.techgrow.cn/v1/wechat/openapi/api/)。
-
 ## 自定义样式
 
 插件默认使用了定义在 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 的 CSS 样式，你可以使用以下两种方式自定义自己的样式：
@@ -157,6 +153,10 @@ updated: 2022-01-12 22:25:49
 - 第二种方式：根据 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 创建自己的 CSS 文件（完整的），并将其存放在自己的博客里，同时通过插件的 `cssUrl` 配置参数来指定其访问的 URL 路径
 
 > 提示：为了方便日后维护，强烈建议使用第二种方式来添加自定义样式
+
+## 开放 API
+
+若不希望依赖 TechGrow 官方提供的系统服务，可以选择使用开放 API 的方式，让引流插件直接使用私有化部署的 API 接口（请自行建设后端应用服务），详细教程请阅读[官方文档](https://docs.techgrow.cn/v1/wechat/openapi/api/)。
 
 ## 已兼容的主题
 
@@ -172,8 +172,8 @@ updated: 2022-01-12 22:25:49
 
 ## 周边生态
 
-- [VuePress v1.x 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
-- [VuePress v2.x 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular-next)
+- [VuePress 1 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
+- [VuePress 2 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular-next)
 
 ## 开发计划
 
