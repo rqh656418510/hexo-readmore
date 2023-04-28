@@ -33,9 +33,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		const expires = readmoreConfig.expires || 365;
 		const lockToc = readmoreConfig.lockToc || 'yes';
 		const height = readmoreConfig.height || 'auto';
-		const validateTokenUrl = readmoreConfig.validateTokenUrl || '';
-		const validateCaptchaUrl = readmoreConfig.validateCaptchaUrl || '';
-		const addBrowseRecordUrl = readmoreConfig.addBrowseRecordUrl || '';
+		const baseUrl = readmoreConfig.baseUrl || '';
 		const cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		const libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 		
@@ -61,9 +59,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 						"expires": "${expires}",
 						"lockToc": "${lockToc}",
 						"interval": "${interval}",
-						"validateTokenUrl": "${validateTokenUrl}",
-						"validateCaptchaUrl": "${validateCaptchaUrl}",
-						"addBrowseRecordUrl": "${addBrowseRecordUrl}"
+						"baseUrl": "${baseUrl}"
 					});
 				} catch(e) {
 					console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
