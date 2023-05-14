@@ -10,7 +10,7 @@
 
 ## 文档
 
-- [官方中文文档](https://docs.techgrow.cn/v1/wechat/hexo/)
+- [官方中文文档](https://docs.techgrow.cn/v1/wechat/tutorial/hexo/)
 
 ## 特色功能
 
