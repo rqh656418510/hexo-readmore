@@ -20,7 +20,7 @@
 - 支持查询用户解锁文章的历史记录
 - 支持自定义或者动态计算文章内容的预览高度
 - 支持自定义 CSS 样式，轻松适配不同风格的博客
-- 支持开放 API，轻松接入第三方私有化部署的应用服务
+- 支持开放 API，灵活接入第三方私有化部署的应用服务
 
 ## 注册博客
 
@@ -174,6 +174,7 @@ updated: 2022-01-12 22:25:49
 
 - [VuePress 1 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
 - [VuePress 2 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular-next)
+- [基于开放引流 API 的 Java 后端项目](https://github.com/rqh656418510/techgrow-openapi-java)
 
 ## 开发计划
 
