@@ -172,8 +172,8 @@ updated: 2022-01-12 22:25:49
 
 ## 周边生态
 
-- [VuePress 1 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
-- [VuePress 2 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular-next)
+- [VuePress v1 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular)
+- [VuePress v2 引流插件](https://github.com/rqh656418510/vuepress-plugin-readmore-popular-next)
 - [基于开放引流 API 的 Java 后端项目](https://github.com/rqh656418510/techgrow-openapi-java)
 
 ## 开发计划
