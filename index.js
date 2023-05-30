@@ -44,7 +44,8 @@ hexo.extend.filter.register('after_post_render', function (data) {
 			<script src="` + libUrl + `" type="text/javascript"></script>
 			<script data-pjax>
 			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
-			if (!isMobile) {
+			var isEncrypt = document.getElementById('hexo-blog-encrypt');
+			if (!isMobile && !isEncrypt) {
 				try {
 					var plugin = new ReadmorePlugin();
 					plugin.init({
