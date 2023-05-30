@@ -1,3 +1,14 @@
+# (2023-05-30)
+
+### Version
+
+- 0.1.17
+
+### Fix
+
+- support pjax
+- compatible blog encrypt
+
 # (2023-04-29)
 
 ### Version
