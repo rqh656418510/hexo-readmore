@@ -42,7 +42,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		const script = `
 			<link rel="stylesheet" type="text/css" href="` + cssUrl + `">
 			<script src="` + libUrl + `" type="text/javascript"></script>
-			<script>
+			<script data-pjax>
 			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
 			if (!isMobile) {
 				try {
