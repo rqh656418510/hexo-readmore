@@ -40,8 +40,6 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		const cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		const libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 		
-		const content = '<div id="readmore-container" class="' + pjaxCssClass + '">' + data.content + '</div>';
-
 		const script = `
 			<link rel="stylesheet" type="text/css" href="` + cssUrl + `">
 			<script data-pjax src="` + libUrl + `" type="text/javascript"></script>
@@ -73,7 +71,9 @@ hexo.extend.filter.register('after_post_render', function (data) {
 			</script>
 		`;
 
-		data.content = content + '\n' + script;
+		const newContent = '<div id="readmore-container">' + data.content + '<div id="readmore-expansion" class="pjax">' + script + '</div></div>';
+
+		data.content = newContent;
 	}
 
 	return data;
