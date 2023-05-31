@@ -1,3 +1,13 @@
+# (2023-06-01)
+
+### Version
+
+- 0.1.22
+
+### Features
+
+- better support pjax
+
 # (2023-05-31)
 
 ### Version
