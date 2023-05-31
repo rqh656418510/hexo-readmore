@@ -80,7 +80,7 @@ readmore:
   interval: 60
   # 移动端的页面是否添加微信公众号引流工具
   allowMobile: false
-  # Pjax 支持的 Css 类（例如 'pjax'），可以使用空格分隔多个值，在博客启用了 Pjax 的情况下才需要配置
+  # Pjax 支持的 Css 类（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
   pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
