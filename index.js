@@ -36,7 +36,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		const lockToc = readmoreConfig.lockToc || 'yes';
 		const height = readmoreConfig.height || 'auto';
 		const baseUrl = readmoreConfig.baseUrl || '';
-		const pjaxCssClass = readmoreConfig.pjaxCssClass || 'pjax';
+		const pjaxCssClass = readmoreConfig.pjaxCssClass || '';
 		const cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		const libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 		
