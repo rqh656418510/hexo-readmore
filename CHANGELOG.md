@@ -2,6 +2,16 @@
 
 ### Version
 
+- 0.1.19
+
+### Fix
+
+- add switches to the mobile
+
+# (2023-05-31)
+
+### Version
+
 - 0.1.18
 
 ### Features
