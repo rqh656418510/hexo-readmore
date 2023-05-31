@@ -2,6 +2,16 @@
 
 ### Version
 
+- 0.1.20
+
+### Fix
+
+- support pjax
+
+# (2023-05-31)
+
+### Version
+
 - 0.1.19
 
 ### Fix

@@ -36,14 +36,15 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		const lockToc = readmoreConfig.lockToc || 'yes';
 		const height = readmoreConfig.height || 'auto';
 		const baseUrl = readmoreConfig.baseUrl || '';
+		const pjaxCssClass = readmoreConfig.pjaxCssClass || 'pjax';
 		const cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 		const libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 		
-		const content = '<div id="readmore-container">' + data.content + '</div>';
+		const content = '<div id="readmore-container" class="' + pjaxCssClass + '">' + data.content + '</div>';
 
 		const script = `
 			<link rel="stylesheet" type="text/css" href="` + cssUrl + `">
-			<script src="` + libUrl + `" type="text/javascript"></script>
+			<script data-pjax src="` + libUrl + `" type="text/javascript"></script>
 			<script data-pjax>
 			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
 			var isEncrypt = document.getElementById('hexo-blog-encrypt');

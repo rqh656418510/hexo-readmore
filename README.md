@@ -80,6 +80,8 @@ readmore:
   interval: 60
   # 移动端的页面是否添加微信公众号引流工具
   allowMobile: false
+  # Pjax 支持的 Css 类，可以使用空格分隔多个值，在博客启用了 Pjax 的情况下才需要配置
+  pjaxCssClass: 'pjax'
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
 ```
@@ -88,20 +90,21 @@ readmore:
 
 ## 参数说明
 
-| 参数        | 类型            | 必填 | 默认值                                                | 说明 |
-| ----------- | --------------- | ---- | ----------------------------------------------------- | ---- |
-| enable      | Boolean         | 是   | `false`                                               | -    |
-| blogId      | String          | 是   |                                                       | -    |
-| name        | String          | 是   |                                                       | -    |
-| keyword     | String          | 是   |                                                       | -    |
-| qrcode      | String          | 是   |                                                       | -    |
-| libUrl      | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
-| cssUrl      | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
-| height      | String / Number | 否   | `auto`                                                | -    |
-| expires     | Number          | 否   | `365`                                                 | -    |
-| interval    | Number          | 否   | `60`                                                  | -    |
-| allowMobile | Boolean         | 否   | `false`                                               | -    |
-| random      | Number          | 否   | `1`                                                   | -    |
+| 参数         | 类型            | 必填 | 默认值                                                | 说明 |
+| ------------ | --------------- | ---- | ----------------------------------------------------- | ---- |
+| enable       | Boolean         | 是   | `false`                                               | -    |
+| blogId       | String          | 是   |                                                       | -    |
+| name         | String          | 是   |                                                       | -    |
+| keyword      | String          | 是   |                                                       | -    |
+| qrcode       | String          | 是   |                                                       | -    |
+| libUrl       | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
+| cssUrl       | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
+| height       | String / Number | 否   | `auto`                                                | -    |
+| expires      | Number          | 否   | `365`                                                 | -    |
+| interval     | Number          | 否   | `60`                                                  | -    |
+| allowMobile  | Boolean         | 否   | `false`                                               | -    |
+| pjaxCssClass | String          | 否   | `pjax`                                                | -    |
+| random       | Number          | 否   | `1`                                                   | -    |
 
 ## 构建 Hexo
 
