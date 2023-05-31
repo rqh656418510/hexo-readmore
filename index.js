@@ -71,7 +71,7 @@ hexo.extend.filter.register('after_post_render', function (data) {
 			</script>
 		`;
 
-		const newContent = '<div id="readmore-container">' + data.content + '<div id="readmore-expansion" class="pjax">' + script + '</div></div>';
+		const newContent = '<div id="readmore-container">' + data.content + '<div id="readmore-expansion" class="' + pjaxCssClass + '">' + script + '</div></div>';
 
 		data.content = newContent;
 	}
