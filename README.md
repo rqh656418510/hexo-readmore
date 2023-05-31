@@ -151,6 +151,15 @@ updated: 2022-01-12 22:25:49
 ---
 ```
 
+## Pjax 的支持
+
+如果博客启用了 Pjax，那么 Hexo 引流插件需要配置 `pjaxCssClass` 参数，目的是让 Pjax 重载引流插件的代码段。否则在站点内通过链接访问文章页面时，引流插件不会生效，除非是手动刷新一次页面。值得一提的是，`pjaxCssClass` 参数需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
+
+| 主题                                                           | 插件配置                  | 备注 |
+| -------------------------------------------------------------- | ------------------------- | ---- |
+| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    |      |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` |      |
+
 ## 自定义样式
 
 插件默认使用了定义在 [hexo.css](https://qiniu.techgrow.cn/readmore/dist/hexo.css) 的 CSS 样式，你可以使用以下两种方式自定义自己的样式：
