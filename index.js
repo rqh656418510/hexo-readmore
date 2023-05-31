@@ -17,6 +17,8 @@ function validateFile(filePath) {
 }
 
 const pluginEnabled = readmoreConfig && (readmoreConfig.enable ? true : false);
+const mobileEnabled = readmoreConfig && (readmoreConfig.arrowMobile ? true : false);
+
 if (pluginEnabled) {
 	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
 }
@@ -45,7 +47,8 @@ hexo.extend.filter.register('after_post_render', function (data) {
 			<script data-pjax>
 			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
 			var isEncrypt = document.getElementById('hexo-blog-encrypt');
-			if (!isMobile && !isEncrypt) {
+			var arrowMobile = ${mobileEnabled};
+			if (!isEncrypt && (!isMobile || (isMobile && arrowMobile))) {
 				try {
 					var plugin = new ReadmorePlugin();
 					plugin.init({
