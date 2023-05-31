@@ -41,9 +41,9 @@ hexo.extend.filter.register('after_post_render', function (data) {
 		const libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 		
 		const script = `
-			<link rel="stylesheet" type="text/css" href="` + cssUrl + `">
-			<script data-pjax src="` + libUrl + `" type="text/javascript"></script>
-			<script data-pjax>
+			<link rel="stylesheet" type="text/css" href="${cssUrl}">
+			<script src="${libUrl}" type="text/javascript"></script>
+			<script>
 			var isMobile = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
 			var isEncrypt = document.getElementById('hexo-blog-encrypt');
 			var allowMobile = ${mobileEnabled};
