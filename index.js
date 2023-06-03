@@ -1,11 +1,14 @@
 'use strict';
 
 const colors = require('colors');
+const { match } = require('node-match-path');
+
 const readmoreConfig = hexo.config.readmore;
 const pjaxSelector = readmoreConfig.pjaxSelector || '';
 const pjaxCssClass = readmoreConfig.pjaxCssClass || '';
 const pluginEnabled = readmoreConfig && (readmoreConfig.enable ? true : false);
 const mobileEnabled = readmoreConfig && (readmoreConfig.allowMobile ? true : false);
+const excludeRules = readmoreConfig.excludes == undefined ? [] : readmoreConfig.excludes;
 
 if (!pluginEnabled) {
 	return;
@@ -16,8 +19,21 @@ if (!pluginEnabled) {
 if (pjaxSelector === '' || pjaxCssClass === '') {
 	// After render post
 	hexo.extend.filter.register('after_post_render', function (data) {
+
+		var isExcluded = false;
+		const postPath = "/" + data.path;
+		if (excludeRules && excludeRules.length > 0) {
+			for (var i = 0; i < excludeRules.length; i++) {
+			  if (match(excludeRules[i], postPath).matches) {
+				isExcluded = true;
+				break;
+			  }
+			}
+		}
+		
 		var postEnabled = data.readmore == undefined ? true : data.readmore;
-		if (postEnabled && validateFile(data.full_source)) {
+		
+		if (postEnabled && !isExcluded && validateFile(data.full_source)) {
 			const random = readmoreConfig.random || 1;
 			const interval = readmoreConfig.interval || 60;
 			const expires = readmoreConfig.expires || 365;
