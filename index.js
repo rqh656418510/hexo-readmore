@@ -17,9 +17,7 @@ if (pjaxSelector === '' || pjaxCssClass === '') {
 	// After render post
 	hexo.extend.filter.register('after_post_render', function (data) {
 		var postEnabled = data.readmore == undefined ? true : data.readmore;
-
-		if (validateFile(data.full_source)) {
-			const execute = postEnabled ? 'yes' : 'no';
+		if (postEnabled && validateFile(data.full_source)) {
 			const random = readmoreConfig.random || 1;
 			const interval = readmoreConfig.interval || 60;
 			const expires = readmoreConfig.expires || 365;
@@ -53,8 +51,7 @@ if (pjaxSelector === '' || pjaxCssClass === '') {
 							"expires": "${expires}",
 							"lockToc": "${lockToc}",
 							"interval": "${interval}",
-							"baseUrl": "${baseUrl}",
-							"execute": "${execute}"
+							"baseUrl": "${baseUrl}"
 						});
 					} catch(e) {
 						console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
