@@ -1,9 +1,9 @@
-# (2023-06-01)
+# (2023-06-03)
 
 ### Version
 
-- 0.1.25
+- 0.2.0
 
 ### Features
 
-- better support pjax
+- support pjax for page and post

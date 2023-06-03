@@ -23,6 +23,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "cheerio": "^1.0.0-rc.12",
     "colors": "^1.4.0"
   }
 }
