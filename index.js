@@ -81,7 +81,6 @@ if (pjaxSelector === '' || pjaxCssClass === '') {
 	
 		return data;
 	});
-	
 }
 else {
 	// After render html (page and post)
