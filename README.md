@@ -66,12 +66,14 @@ readmore:
   name: '全栈技术驿站'
   # 已申请的微信公众号回复关键词
   keyword: 'tech'
-  # 已申请的微信公众号二维码链接
+  # 已申请的微信公众号二维码图片
   qrcode: 'https://www.techgrow.cn/img/wx_mp_qr.png'
   # 自定义的 JS 资源链接，可用于 CDN 加速
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
+  # 终端输出运行的日志信息
+  debug: true
   # 文章内容的预览高度（例如 300）
   height: 'auto'
   # 文章解锁后凭证的有效天数
@@ -80,7 +82,9 @@ readmore:
   interval: 60
   # 移动端的页面是否添加微信公众号引流工具
   allowMobile: false
-  # Pjax 支持重载的 Css 类（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
+  # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
+  pjaxSelector: ''
+  # Pjax 支持重载的 Css 类名（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
   pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
@@ -99,12 +103,15 @@ readmore:
 | qrcode       | String          | 是   |                                                       | -    |
 | libUrl       | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
 | cssUrl       | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
+| debug        | Boolean         | 否   | `true`                                                | -    |
 | height       | String / Number | 否   | `auto`                                                | -    |
 | expires      | Number          | 否   | `365`                                                 | -    |
 | interval     | Number          | 否   | `60`                                                  | -    |
 | allowMobile  | Boolean         | 否   | `false`                                               | -    |
+| pjaxSelector | String          | 否   |                                                       | -    |
 | pjaxCssClass | String          | 否   |                                                       | -    |
 | random       | Number          | 否   | `1`                                                   | -    |
+| excludes     | Array           | 否   |                                                       | -    |
 
 ## 构建 Hexo
 
@@ -136,9 +143,10 @@ $ hexo server
 
 ![](https://raw.githubusercontent.com/rqh656418510/hexo-readmore/master/screenshot/202980a480fd463c814a31d5cc3fb2a1.png)
 
+
 ## 取消阅读限制
 
-若希望关闭某篇文章的微信公众号导流功能，可以在文章的头模板中使用 `readmore: false` 配置属性（优先级最高），如下所示：
+若希望关闭某篇文章的微信公众号导流功能，可以在文章的头模板中使用 `readmore: false` 配置属性，如下所示：
 
 ```
 ---
@@ -151,14 +159,50 @@ updated: 2022-01-12 22:25:49
 ---
 ```
 
+若希望关闭部分文章的微信公众号引流功能，可以使用插件的 `excludes` 参数来实现，支持使用路径、通配符、正则表达式的匹配规则。
+
+- 根据 URL 路径，关闭某篇文章的引流功能
+
+``` yml
+# 排除 URL 为 `/notes/637e7b8f.html` 的文章
+readmore:
+  ....
+  excludes:
+    - '/notes/637e7b8f.html'
+```
+
+- 根据 URL 通配符，关闭某个目录下的所有文章的引流功能
+
+``` yml
+# 排除 URL 以 `/fontend` 开头的文章
+# 排除 URL 为 `/backend/python/io` 的文章
+readmore:
+  ....
+  excludes:
+    - '/fontend/*'
+    - '/backend/*/io'
+```
+
+- 根据 URL 正则表达式，关闭符合规则的所有文章的引流功能
+
+``` yml
+# 排除 URL 不以 `/fontend` 开头的文章
+readmore:
+  ....
+  excludes:
+    - '^(?!\/fontend).*'
+```
+
 ## Pjax 的支持
 
-如果博客启用了 Pjax，那么 Hexo 引流插件需要配置 `pjaxCssClass` 参数，否则在站点内通过链接访问文章页面时，引流插件不会生效，除非是手动刷新一次页面。值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流插件的代码段，它需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
+如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、归档页等）通过链接访问文章页面时，引流插件可能不会生效，除非是手动刷新一次页面。值得一提的是，两者都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
-| 主题                                                           | 插件配置                  | 备注 |
-| -------------------------------------------------------------- | ------------------------- | ---- |
-| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    |      |
-| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` |      |
+| 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                | 说明 |
+| -------------------------------------------------------------- | ------------------------- | -------------------------------- | ---- |
+| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'` |      |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`    |      |
+
+> 值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流插件的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章的主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
 
 ## 自定义样式
 
