@@ -192,9 +192,9 @@ readmore:
 | [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'` |      |
 | [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`    |      |
 
-> 值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章的主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
+> 值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
 
-> 特别注意，由于 Pjax 非常依赖页面布局的一致性，因此请确保通过 `pjaxSelector` 参数指定的 JS 选择器在所有页面都能够获取到唯一的 HTML 标签元素，否则会导致部分页面的 Pjax 或者引流功能不会生效。如果无法满足这一点，则需要手动更改 Hexo 主题的模板代码，使 JS 选择器在所有页面都能够获取到唯一的 HTML 标签元素。
+> 特别注意，由于 Pjax 非常依赖页面布局的一致性，因此请确保通过 `pjaxSelector` 参数指定的 JS 选择器在所有页面（包括 `page` 和 `post`）都能够获取到唯一的 HTML 标签元素，否则会导致部分页面的 Pjax 或者引流功能不会生效。如果无法满足这一点，则需要手动更改 Hexo 主题的模板代码，使 JS 选择器在所有页面都能够获取到唯一的 HTML 标签元素。Hexo 主题模板代码的修改可以参考 [NexT](https://github.com/rqh656418510/hexo-theme-next-8.x/commit/6e259889fdc867ccd8eb1163e9b1f0629493387a)，然后将 `pjaxSelector` 设置为 `div.post-container`。
 
 ## 自定义样式
 
