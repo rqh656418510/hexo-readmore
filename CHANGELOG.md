@@ -1,3 +1,13 @@
+# (2023-06-05)
+
+### Version
+
+- 0.2.1
+
+### Features
+
+- optimized condition judgment
+
 # (2023-06-04)
 
 ### Version
