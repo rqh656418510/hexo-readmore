@@ -6,6 +6,7 @@
 
 ### Features
 
+- change log color
 - optimized condition judgment
 
 # (2023-06-04)
@@ -17,6 +18,36 @@
 ### Features
 
 - compatible pjax for page and post
+
+# (2023-06-02)
+
+### Version
+
+- 0.1.25
+
+### Features
+
+- better support pjax
+
+# (2023-06-01)
+
+### Version
+
+- 0.1.24
+
+### Features
+
+- better support pjax
+
+# (2023-06-01)
+
+### Version
+
+- 0.1.23
+
+### Features
+
+- better support pjax
 
 # (2023-06-01)
 
