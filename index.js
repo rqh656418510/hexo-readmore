@@ -6,9 +6,9 @@ const { match } = require('node-match-path');
 const readmoreConfig = hexo.config.readmore;
 const pjaxSelector = readmoreConfig.pjaxSelector || '';
 const pjaxCssClass = readmoreConfig.pjaxCssClass || '';
-const pluginEnabled = readmoreConfig && (readmoreConfig.enable ? true : false);
-const mobileEnabled = readmoreConfig && (readmoreConfig.allowMobile ? true : false);
 const excludeRules = readmoreConfig.excludes == undefined ? [] : readmoreConfig.excludes;
+const pluginEnabled = readmoreConfig && (readmoreConfig.enable == undefined ? false : readmoreConfig.enable);
+const mobileEnabled = readmoreConfig && (readmoreConfig.allowMobile == undefined ? false : readmoreConfig.allowMobile);
 
 if (!pluginEnabled) {
 	return;
