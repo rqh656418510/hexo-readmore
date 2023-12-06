@@ -187,14 +187,15 @@ readmore:
 
 如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、分类页、归档页等）通过链接访问文章页面时，引流工具不会生效，除非是手动刷新一次页面。值得一提的是，两者都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
-| 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                | 说明 |
-| -------------------------------------------------------------- | ------------------------- | -------------------------------- | ---- |
-| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'` |      |
-| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`    |      |
+| 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                     | 说明 |
+| -------------------------------------------------------------- | ------------------------- | ------------------------------------- | ---- |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`         |      |
+| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'`      |      |
+| [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.article-content'` |      |
 
-> 值得一提的是，`pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
+上述 `pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
 
-> 特别注意，由于 Pjax 非常依赖页面布局的一致性，因此请确保通过 `pjaxSelector` 参数指定的 JS 选择器在所有页面（包括 `page` 和 `post`）都能够获取到唯一的 HTML 标签元素，否则会导致部分页面的 Pjax 或者引流功能不会生效。如果无法满足这一点，则需要手动更改 Hexo 主题的模板代码，使 JS 选择器在所有页面都能够获取到唯一的 HTML 标签元素。Hexo 主题模板代码的修改可以参考 [NexT](https://github.com/rqh656418510/hexo-theme-next-8.x/commit/6e259889fdc867ccd8eb1163e9b1f0629493387a)，然后将 `pjaxSelector` 设置为 `div.post-container`。
+> 特别注意，由于 Pjax 非常依赖页面布局的一致性，因此请确保通过 `pjaxSelector` 参数指定的 JS 选择器在所有页面（包括 `page` 和 `post`）都能够获取到唯一的 HTML 标签元素，否则会导致部分页面的 Pjax 或者引流功能不会生效。如果无法满足这一点，则需要手动更改 Hexo 主题的模板代码，使 JS 选择器在所有页面都能够获取到唯一的 HTML 标签元素。Hexo 主题模板代码的修改可以参考 [NexT](https://github.com/rqh656418510/hexo-theme-next-8.x/commit/6e259889fdc867ccd8eb1163e9b1f0629493387a)，然后设置 `pjaxSelector` 的参数值为 `div.post-container`，并设置 `pjaxCssClass` 的参数值为 `pjax`。
 
 ## 自定义样式
 
@@ -220,6 +221,7 @@ readmore:
 | Fluid     | [https://github.com/fluid-dev/hexo-theme-fluid](https://github.com/fluid-dev/hexo-theme-fluid)         |
 | Stun      | [https://github.com/liuyib/hexo-theme-stun](https://github.com/liuyib/hexo-theme-stun)                 |
 | Butterfly | [https://github.com/jerryc127/hexo-theme-butterfly](https://github.com/jerryc127/hexo-theme-butterfly) |
+| Tree      | [https://github.com/rqh656418510/hexo-theme-tree](https://github.com/rqh656418510/hexo-theme-tree)     |
 
 ## 周边生态
 
