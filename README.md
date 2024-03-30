@@ -183,7 +183,7 @@ readmore:
 
 ## 主题兼容性
 
-如果 Hexo 博客安装引流插件之后，发现无论怎样点击文章目录（Toc）的锚点链接都无法生效，这种情况一般是引流插件与 Hexo 主题存在兼容性导致的，比如 Matery 主题。解决办法是新增以下两个插件配置参数（缺一不可）：
+如果 Hexo 博客安装引流插件之后，发现无论怎样点击文章目录（Toc）的锚点链接都无法生效，这种情况一般是引流插件与 Hexo 主题存在兼容性导致的，比如 Matery 主题。解决办法是新增以下两个插件配置参数（缺一不可），配置示例如下：
 
 ``` yml
 readmore:
@@ -195,9 +195,9 @@ readmore:
 
 值得一提的是，上述两个参数都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
-| 主题                                                                                                     | tocSelector 配置              | articleContentId 配置                | 说明 |
-| -------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------ | ---- |
-| Matery    [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery) | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |      |
+| 主题                                                    | tocSelector 配置              | articleContentId 配置                |
+| ------------------------------------------------------- | ----------------------------- | ------------------------------------ |
+| [Matery](https://github.com/blinkfox/hexo-theme-matery) | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |
 
 上述 `tocSelector` 参数的作用是通过 JS 选择器获取文章目录的内容，而 `articleContentId` 参数是用于指定文章主体内容所在容器（DIV 标签）的 ID。
 
@@ -215,11 +215,11 @@ readmore:
 
 值得一提的是，上述两个参数都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
-| 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                     | 说明 |
-| -------------------------------------------------------------- | ------------------------- | ------------------------------------- | ---- |
-| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`         |      |
-| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'`      |      |
-| [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.article-content'` |      |
+| 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                     |
+| -------------------------------------------------------------- | ------------------------- | ------------------------------------- |
+| [Butterfly](https://github.com/jerryc127/hexo-theme-butterfly) | `pjaxCssClass: 'js-pjax'` | `pjaxSelector: 'main.layout'`         |
+| [NexT](https://github.com/next-theme/hexo-theme-next)          | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.main-inner'`      |
+| [Tree](https://github.com/rqh656418510/hexo-theme-tree)        | `pjaxCssClass: 'pjax'`    | `pjaxSelector: 'div.article-content'` |
 
 上述 `pjaxCssClass` 参数的作用是让 Pjax 重载引流工具的代码段，而 `pjaxSelector` 参数的作用是通过 JS 选择器获取文章主体内容。当配置了 `pjaxSelector` 和 `pjaxCssClass` 参数之后，Hexo 引流插件会往所有渲染后的 HTML 页面自动添加引流代码段，包括 `page` 和 `post` 的页面类型。如果两者都不配置，则 Hexo 引流插件默认只会往渲染后的 `post` 页面添加引流代码段。
 
