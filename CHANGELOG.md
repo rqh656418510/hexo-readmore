@@ -2,11 +2,11 @@
 
 ### Version
 
-- 0.3.1
+- 0.3.0
 
 ### Fix
 
-- Compatible with some special themes, such as Matery
+- compatible with some special themes, such as Matery
 
 # (2023-06-05)
 

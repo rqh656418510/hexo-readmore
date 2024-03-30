@@ -183,7 +183,7 @@ readmore:
 
 ## 主题兼容性
 
-如果 Hexo 博客安装引流插件之后，发现无论怎么点击文章目录（Toc）的锚点链接都无法生效，这种情况一般是引流插件与 Hexo 主题存在兼容性导致的，比如 Matery 主题。解决办法是新增以下两个插件参数（缺一不可）：
+如果 Hexo 博客安装引流插件之后，发现无论怎样点击文章目录（Toc）的锚点链接都无法生效，这种情况一般是引流插件与 Hexo 主题存在兼容性导致的，比如 Matery 主题。解决办法是新增以下两个插件配置参数（缺一不可）：
 
 ``` yml
 readmore:
@@ -199,7 +199,7 @@ readmore:
 | -------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------ | ---- |
 | Matery    [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery) | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |      |
 
-上述 `tocSelector` 参数的作用是通过 JS 选择器获取文章目录，而 `articleContentId` 参数是文章主体内容所在容器（DIV 标签）的 ID。
+上述 `tocSelector` 参数的作用是通过 JS 选择器获取文章目录的内容，而 `articleContentId` 参数是用于指定文章主体内容所在容器（DIV 标签）的 ID。
 
 ## Pjax 的支持
 
