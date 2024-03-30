@@ -72,20 +72,16 @@ readmore:
   libUrl: 'https://qiniu.techgrow.cn/readmore/dist/readmore.js'
   # 自定义的 CSS 资源链接，可用于适配不同风格的博客
   cssUrl: 'https://qiniu.techgrow.cn/readmore/dist/hexo.css'
+  # 文章内容的预览高度(例如 300)，设置值为 auto 则表示预览高度自适应
+  height: 'auto'
   # 命令行终端是否输出日志信息
   debug: true
-  # 文章内容的预览高度（例如 300）
-  height: 'auto'
   # 文章解锁后凭证的有效天数
   expires: 365
   # 定时校验凭证有效性的时间间隔（秒）
   interval: 60
   # 是否添加微信公众号引流工具到移动端页面
   allowMobile: false
-  # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
-  pjaxSelector: ''
-  # Pjax 支持重载的 Css 类名（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
-  pjaxCssClass: ''
   # 每篇文章随机添加微信公众号引流工具的概率，有效范围在 0.1 ~ 1 之间，1 则表示所有文章默认都自动添加引流工具
   random: 1
 ```
@@ -94,24 +90,26 @@ readmore:
 
 ## 参数说明
 
-| 参数         | 类型            | 必填 | 默认值                                                | 说明 |
-| ------------ | --------------- | ---- | ----------------------------------------------------- | ---- |
-| enable       | Boolean         | 是   | `false`                                               | -    |
-| blogId       | String          | 是   |                                                       | -    |
-| name         | String          | 是   |                                                       | -    |
-| keyword      | String          | 是   |                                                       | -    |
-| qrcode       | String          | 是   |                                                       | -    |
-| libUrl       | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
-| cssUrl       | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
-| debug        | Boolean         | 否   | `true`                                                | -    |
-| height       | String / Number | 否   | `auto`                                                | -    |
-| expires      | Number          | 否   | `365`                                                 | -    |
-| interval     | Number          | 否   | `60`                                                  | -    |
-| allowMobile  | Boolean         | 否   | `false`                                               | -    |
-| pjaxSelector | String          | 否   |                                                       | -    |
-| pjaxCssClass | String          | 否   |                                                       | -    |
-| random       | Number          | 否   | `1`                                                   | -    |
-| excludes     | Array           | 否   |                                                       | -    |
+| 参数             | 类型            | 必填 | 默认值                                                | 说明 |
+| ---------------- | --------------- | ---- | ----------------------------------------------------- | ---- |
+| enable           | Boolean         | 是   | `false`                                               | -    |
+| blogId           | String          | 是   |                                                       | -    |
+| name             | String          | 是   |                                                       | -    |
+| keyword          | String          | 是   |                                                       | -    |
+| qrcode           | String          | 是   |                                                       | -    |
+| libUrl           | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/readmore.js` | -    |
+| cssUrl           | String          | 否   | `https://qiniu.techgrow.cn/readmore/dist/hexo.css`    | -    |
+| debug            | Boolean         | 否   | `true`                                                | -    |
+| height           | String / Number | 否   | `auto`                                                | -    |
+| expires          | Number          | 否   | `365`                                                 | -    |
+| interval         | Number          | 否   | `60`                                                  | -    |
+| allowMobile      | Boolean         | 否   | `false`                                               | -    |
+| random           | Number          | 否   | `1`                                                   | -    |
+| excludes         | Array           | 否   |                                                       | -    |
+| tocSelector      | String          | 否   |                                                       | -    |
+| articleContentId | String          | 否   |                                                       | -    |
+| pjaxSelector     | String          | 否   |                                                       | -    |
+| pjaxCssClass     | String          | 否   |                                                       | -    |
 
 ## 构建 Hexo
 
@@ -183,9 +181,37 @@ readmore:
     - '/backend/*/io'
 ```
 
+## 主题兼容性
+
+如果 Hexo 博客安装引流插件之后，发现无论怎么点击文章目录（Toc）的锚点链接都无法生效，这种情况一般是引流插件与 Hexo 主题存在兼容性导致的，比如 Matery 主题。解决办法是新增以下两个插件参数（缺一不可）：
+
+``` yml
+readmore:
+  # 文章目录的 JS 选择器
+  tocSelector: ''
+  # 文章主体内容所在容器（DIV）的 ID，在存在兼容性问题时才需要根据不同的主题进行配置
+  articleContentId: ''
+```
+
+值得一提的是，上述两个参数都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
+
+| 主题                                                                                                     | tocSelector 配置              | articleContentId 配置                | 说明 |
+| -------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------ | ---- |
+| Matery    [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery) | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |      |
+
 ## Pjax 的支持
 
-如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、分类页、归档页等）通过链接访问文章页面时，引流工具不会生效，除非是手动刷新一次页面。值得一提的是，两者都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
+如果博客启用了 Pjax，那么 Hexo 引流插件需要使用 `pjaxCssClass` 参数指定 Pjax 支持重载的 Css 类名（例如 `pjax`），同时需要使用 `pjaxSelector` 参数指定获取文章主体内容的 JS 选择器。否则在站点内（如首页、标签页、分类页、归档页等）通过链接访问文章页面时，引流工具不会生效，除非是手动刷新一次页面。配置示例如下：
+
+``` yml
+readmore:
+  # 获取文章主体内容的 JS 选择器，在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
+  pjaxSelector: ''
+  # Pjax 支持重载的 Css 类名（例如 'pjax'），在博客启用了 Pjax 的情况下才需要根据不同的主题进行配置
+  pjaxCssClass: ''
+```
+
+值得一提的是，上述两个参数都需要根据不同的 Hexo 主题来配置，其中不同主题的配置示例如下：
 
 | 主题                                                           | pjaxCssClass 配置         | pjaxSelector 配置                     | 说明 |
 | -------------------------------------------------------------- | ------------------------- | ------------------------------------- | ---- |

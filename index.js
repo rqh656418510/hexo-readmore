@@ -4,6 +4,8 @@ const colors = require('colors');
 const { match } = require('node-match-path');
 
 const readmoreConfig = hexo.config.readmore;
+const tocSelector = readmoreConfig.tocSelector || '';
+const articleContentId = readmoreConfig.articleContentId || '';
 const pjaxSelector = readmoreConfig.pjaxSelector || '';
 const pjaxCssClass = readmoreConfig.pjaxCssClass || '';
 const excludeRules = readmoreConfig.excludes == undefined ? [] : readmoreConfig.excludes;
@@ -16,8 +18,16 @@ if (!pluginEnabled) {
 	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
 }
 
-if (pjaxSelector === '' || pjaxCssClass === '') {
-	// After render post
+if (articleContentId != '' && tocSelector != '') {
+	// After render html, include post and page types
+	hexo.extend.filter.register('after_render:html', require('./lib/readmore-compatible'));
+}
+else if (pjaxSelector != '' || pjaxCssClass != '') {
+	// After render html, include post and page types
+	hexo.extend.filter.register('after_render:html', require('./lib/readmore-pjax'));
+}
+else {
+	// After render html, include post types
 	hexo.extend.filter.register('after_post_render', function (data) {
 
 		var isExcluded = false;
@@ -33,7 +43,7 @@ if (pjaxSelector === '' || pjaxCssClass === '') {
 		
 		var postEnabled = data.readmore == undefined ? true : data.readmore;
 		
-		if (postEnabled && !isExcluded && validateFile(data.full_source)) {
+		if (postEnabled && !isExcluded && validateMdFile(data.full_source)) {
 			const random = readmoreConfig.random || 1;
 			const interval = readmoreConfig.interval || 60;
 			const expires = readmoreConfig.expires || 365;
@@ -82,12 +92,8 @@ if (pjaxSelector === '' || pjaxCssClass === '') {
 		return data;
 	});
 }
-else {
-	// After render html (page and post)
-	hexo.extend.filter.register('after_render:html', require('./lib/readmore-pjax'));
-}
 
-function validateFile(filePath) {
+function validateMdFile(filePath) {
 	if (!filePath || filePath === '') {
 		return true;
 	}
