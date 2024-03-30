@@ -2,6 +2,16 @@
 
 ### Version
 
+- 0.3.1
+
+### Fix
+
+- compatible with some special themes, such as Matery
+
+# (2024-03-31)
+
+### Version
+
 - 0.3.0
 
 ### Fix

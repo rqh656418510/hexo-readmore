@@ -4,7 +4,6 @@ const colors = require('colors');
 const { match } = require('node-match-path');
 
 const readmoreConfig = hexo.config.readmore;
-const tocSelector = readmoreConfig.tocSelector || '';
 const articleContentId = readmoreConfig.articleContentId || '';
 const pjaxSelector = readmoreConfig.pjaxSelector || '';
 const pjaxCssClass = readmoreConfig.pjaxCssClass || '';
@@ -18,7 +17,7 @@ if (!pluginEnabled) {
 	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
 }
 
-if (articleContentId != '' && tocSelector != '') {
+if (articleContentId != '') {
 	// After render html, include post and page types
 	hexo.extend.filter.register('after_render:html', require('./lib/readmore-compatible'));
 }
@@ -27,7 +26,7 @@ else if (pjaxSelector != '' || pjaxCssClass != '') {
 	hexo.extend.filter.register('after_render:html', require('./lib/readmore-pjax'));
 }
 else {
-	// After render html, include post types
+	// After render html, include post type
 	hexo.extend.filter.register('after_post_render', function (data) {
 
 		var isExcluded = false;
@@ -50,6 +49,7 @@ else {
 			const lockToc = readmoreConfig.lockToc || 'yes';
 			const height = readmoreConfig.height || 'auto';
 			const baseUrl = readmoreConfig.baseUrl || '';
+			const tocSelector = readmoreConfig.tocSelector || '';
 			const cssUrl = readmoreConfig.cssUrl || 'https://qiniu.techgrow.cn/readmore/dist/hexo.css';
 			const libUrl = readmoreConfig.libUrl || 'https://qiniu.techgrow.cn/readmore/dist/readmore.js';
 			
@@ -77,7 +77,8 @@ else {
 							"expires": "${expires}",
 							"lockToc": "${lockToc}",
 							"interval": "${interval}",
-							"baseUrl": "${baseUrl}"
+							"baseUrl": "${baseUrl}",
+							"tocSelector": "${tocSelector}"
 						});
 					} catch(e) {
 						console.warn("readmore plugin occurred error: " + e.name + " | " + e.message);
