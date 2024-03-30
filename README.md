@@ -107,7 +107,7 @@ readmore:
 | random           | Number          | 否   | `1`                                                   | -    |
 | excludes         | Array           | 否   |                                                       | -    |
 | tocSelector      | String          | 否   |                                                       | -    |
-| articleContentId | String          | 否   |                                                       | -    |
+| articleContentId | String          | 否   | `readmore-container`                                  | -    |
 | pjaxSelector     | String          | 否   |                                                       | -    |
 | pjaxCssClass     | String          | 否   |                                                       | -    |
 
@@ -189,7 +189,7 @@ readmore:
 readmore:
   # 文章目录的 JS 选择器
   tocSelector: ''
-  # 文章主体内容所在容器（DIV）的 ID，在存在兼容性问题时才需要根据不同的主题进行配置
+  # 文章主体内容所在容器（DIV 标签）的 ID，在存在兼容性问题时才需要根据不同的主题进行配置
   articleContentId: ''
 ```
 
@@ -198,6 +198,8 @@ readmore:
 | 主题                                                                                                     | tocSelector 配置              | articleContentId 配置                | 说明 |
 | -------------------------------------------------------------------------------------------------------- | ----------------------------- | ------------------------------------ | ---- |
 | Matery    [https://github.com/blinkfox/hexo-theme-matery](https://github.com/blinkfox/hexo-theme-matery) | `tocSelector: '#toc-content'` | `articleContentId: 'articleContent'` |      |
+
+上述 `tocSelector` 参数的作用是通过 JS 选择器获取文章目录，而 `articleContentId` 参数是文章主体内容所在容器（DIV 标签）的 ID。
 
 ## Pjax 的支持
 
