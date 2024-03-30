@@ -17,11 +17,11 @@ if (!pluginEnabled) {
 	console.log(colors.bold.white.bgBlue(' READMORE PLUGIN ') + ' running... ');
 }
 
-if (articleContentId != '') {
+if (articleContentId != '' && pjaxSelector == '') {
 	// After render html, include post and page types
 	hexo.extend.filter.register('after_render:html', require('./lib/readmore-compatible'));
 }
-else if (pjaxSelector != '' || pjaxCssClass != '') {
+else if (pjaxSelector != '' && pjaxCssClass != '') {
 	// After render html, include post and page types
 	hexo.extend.filter.register('after_render:html', require('./lib/readmore-pjax'));
 }
